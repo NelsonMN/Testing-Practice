@@ -1,36 +1,4 @@
-import { capitalize, reverseString, calculator } from './index'
-
-// capitalize():
-
-test("Empty string", () =>
-    expect(capitalize('')).toBe('')
-)
-
-test("Two character string", () => 
-    expect(capitalize('hi')).toBe('Hi')
-)
-
-test("One character string", () =>
-    expect(capitalize('x')).toBe("X")
-)
-
-
-// reverseString():
-
-test("Empty String", () => 
-    expect(reverseString('')).toBe('')
-)
-
-test("One letter", () => 
-    expect(reverseString('x')).toBe('x')
-)
-
-test("More than one character", () =>
-    expect(reverseString('hello')).toBe('olleh')
-)
-
-
-// calculator():
+import calculator from '../scripts/calculator'
 
 // add() - addition is associative so we only need the three cases:
 test("Addition - two positive integers", () =>
@@ -96,5 +64,3 @@ test("Division - first integer negative, second integer positive", () =>
 test("Division - both negative integers", () =>
     expect(calculator.div(-81,-9)).toBe(9)
 )
-
-
