@@ -64,3 +64,37 @@ test("Subtraction - both negative integers", () =>
 )
 
 
+// mul() - multiplication is associative, so we only need 3 cases
+
+test("Multiplication - two positive integers", () =>
+    expect(calculator.mul(1, 2)).toBe(2)
+)
+
+test("Multiplication - one positive, one negative integer", () =>
+    expect(calculator.mul(6, -4)).toBe(-24)    
+)
+
+test("Multiplication - two negative integers", () => 
+    expect(calculator.mul(-5, -2)).toBe(10)
+)
+
+
+// div():
+
+test("Division - two positive integers", () => 
+    expect(calculator.div(6, 6)).toBe(1)
+)
+
+test("Division - first integer positive, second integer negative", () =>
+    expect(calculator.div(10, -5)).toBe(-2)
+)
+
+test("Division - first integer negative, second integer positive", () =>
+    expect(calculator.div(-36, 6)).toBe(-6)    
+)
+
+test("Division - both negative integers", () =>
+    expect(calculator.div(-81,-9)).toBe(9)
+)
+
+
