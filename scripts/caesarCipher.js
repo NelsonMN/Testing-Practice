@@ -1,14 +1,23 @@
 const module = (() => {
-    const isUpperCase = char => char === char.toUpperCase()
-
     const isAlpha = char => char.match(/^[A-Za-z]+$/)
 
-    const caesarCypher = (input, num) => {
-        let result
+    const isUpperCase = char => char === char.toUpperCase()
+
+    const caesarCipher = (input, num) => {
+        let result = ''
 
         for (let char of input) {
             if (isAlpha(char)) {
-                // stuff
+                const asciiCode = char.toLowerCase().charCodeAt(0)
+                const shift = ((asciiCode - 97 + num) % 26) + 97
+                const newLetter = String.fromCharCode(shift)
+
+                if (isUpperCase(char)) {
+                    result += newLetter.toUpperCase()
+                } else {
+                    result += newLetter
+                }
+
             } else {
                 result += char
             }
@@ -18,6 +27,8 @@ const module = (() => {
     }
 
     return {
-        
+        caesarCipher
     }
 })();
+
+export default module
